@@ -5,69 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Niemi Isolering – Ventilation & Metall</title>
   <meta name="description" content="Kvalitativa ventilationssystem och metallprodukter för Lettland – rimliga priser och snabb leverans." />
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-  <!-- Header -->
   <header class="site-header">
     <div class="container topbar">
       <div class="brand">NIEMI ISOLERING</div>
       <nav aria-label="Huvudmeny">
-        <a href="index.html" aria-current="page">Start</a>
-        <a href="produkter.html">Produkter</a>
-        <a href="prislista.html">Prislista</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="../index.html">Start</a>
+        <a href="../produkter.html">Produkter</a>
+        <a href="../prislista.html">Prislista</a>
+        <a href="../kontakt.html">Kontakt</a>
       </nav>
     </div>
 
-    <!-- Hero -->
     <section class="hero container">
       <h1>Ventilationssystem & metallprodukter</h1>
       <p class="lead">Precision i varje snitt – kvalitet i varje detalj. Vänliga priser och snabb leverans.</p>
 
       <div class="cta-row">
-        <!-- NY KNAPP: Plåtbeklädnader (PDF) -->
-        <a class="btn skarda-btn"
-           href="svenska/pdf-viewer.html?file=lvpdf/skarda-apvalki-cenradis-2025-2026.pdf">
+        <!-- Samassa kansiossa oleva pdf-viewer.html → käytä suhteellista polkua -->
+        <a id="skarda-btn" class="btn skarda-btn"
+           href="pdf-viewer.html?file=../lvpdf/skarda-apvalki-cenradis-2025-2026.pdf">
           Plåtbeklädnader (PDF)
         </a>
 
-        <!-- Produktkatalog (om tillgänglig) -->
-        <a class="btn" href="svenska/pdf-viewer.html" target="_blank" rel="noopener">
+        <a class="btn" href="pdf-viewer.html" target="_blank" rel="noopener">
           Visa produkt-PDF
         </a>
 
-        <!-- Exempel på att öppna en annan PDF -->
-        <a class="btn-outline" href="svenska/pdf-viewer.html?file=/lvpdf/1.lv.pdf" target="_blank" rel="noopener">
+        <a class="btn-outline" href="pdf-viewer.html?file=../lvpdf/1.lv.pdf" target="_blank" rel="noopener">
           Öppna första PDF
         </a>
       </div>
     </section>
   </header>
 
-  <!-- Bilder -->
   <section class="container imgwrap">
-    <img loading="lazy" class="pretty" src="assets/julkaisuun.png" alt="Rektangulära kanaler – standard och specialmått">
+    <img loading="lazy" class="pretty" src="../assets/julkaisuun.png" alt="Rektangulära kanaler – standard och specialmått">
     <p class="imgcap">Standardkanaler och specialmått enligt överenskommelse</p>
   </section>
 
   <section class="container imgwrap">
-    <img loading="lazy" class="pretty" src="assets/julkaisu.png" alt="Isoleringsbeklädnad – exakt och estetisk tillverkning">
+    <img loading="lazy" class="pretty" src="../assets/julkaisu.png" alt="Isoleringsbeklädnad – exakt och estetisk tillverkning">
     <p class="imgcap">Isoleringsbeklädnad med erfarenhet och precision</p>
   </section>
 
-  <!-- Snabblänkar -->
   <section class="container section">
     <div class="cta-row">
-      <a class="btn" href="produkter.html">Produkter</a>
-      <a class="btn btn-outline" href="prislista.html">Prislista</a>
-      <a class="btn btn-outline" href="kontakt.html">Kontakt</a>
+      <a class="btn" href="../produkter.html">Produkter</a>
+      <a class="btn btn-outline" href="../prislista.html">Prislista</a>
+      <a class="btn btn-outline" href="../kontakt.html">Kontakt</a>
     </div>
   </section>
 
   <main>
-    <!-- Fördelar -->
     <section class="container grid-3" style="margin-top:.75rem;">
       <article class="card">
         <h3>Kvalitet</h3>
@@ -83,7 +76,6 @@
       </article>
     </section>
 
-    <!-- CTA -->
     <section class="container cta-banner">
       <p><strong>Behöver du en offert?</strong></p>
       <p>Skicka oss <strong>ritningar eller mått</strong> – vi beräknar snabbt <strong>materialkostnad</strong> och leverans.</p>
@@ -94,7 +86,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="divider"></div>
@@ -108,12 +99,12 @@
     </div>
   </footer>
 
-  <!-- Automatisk länkväxling om Pages-länk inte fungerar ännu -->
   <script>
   (async () => {
     const a = document.getElementById('skarda-btn');
+    if (!a) return;
     const pagesURL = a.getAttribute('href');
-    const rawURL = 'https://raw.githubusercontent.com/Markku2809/latviab/main/lvpdf/skarda-apvalki-cenradis-2025-2026.pdf';
+    const rawURL = 'https://raw.githubusercontent.com/Markku2809/sv.-niemiisolering/main/lvpdf/skarda-apvalki-cenradis-2025-2026.pdf';
     try {
       const r = await fetch(pagesURL, { method: 'HEAD' });
       if (!r.ok) a.setAttribute('href', rawURL);
