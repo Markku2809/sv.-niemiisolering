@@ -4,63 +4,79 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Niemi Isolering – Ventilation & Metall</title>
-  <meta name="description" content="Kvalitativa ventilationssystem och metallprodukter för Lettland – rimliga priser och snabb leverans." />
+  <meta name="description" content="Ventilationssystem, isoleringsbeklädnader och metallprodukter. Rimliga priser och snabb leverans i Lettland och Norden." />
   <link rel="icon" href="../assets/favicon.ico" />
   <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* pientä hienosäätöä sivulle, ei koske muihin */
+    .hero .lead{max-width:60ch}
+    .pdf-note{font-size:.9rem; opacity:.8}
+  </style>
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container topbar">
       <div class="brand">NIEMI ISOLERING</div>
       <nav aria-label="Huvudmeny">
-        <a href="../index.html">Start</a>
-        <a href="../produkter.html">Produkter</a>
-        <a href="../prislista.html">Prislista</a>
-        <a href="../kontakt.html">Kontakt</a>
+        <a href="./index.html" aria-current="page">Start</a>
+        <a href="./produkter.html">Produkter</a>
+        <a href="./prislista.html">Prislista</a>
+        <a href="./kontakt.html">Kontakt</a>
       </nav>
     </div>
 
+    <!-- Hero -->
     <section class="hero container">
       <h1>Ventilationssystem & metallprodukter</h1>
       <p class="lead">Precision i varje snitt – kvalitet i varje detalj. Vänliga priser och snabb leverans.</p>
 
       <div class="cta-row">
-        <!-- Samassa kansiossa oleva pdf-viewer.html → käytä suhteellista polkua -->
-        <a id="skarda-btn" class="btn skarda-btn"
-           href="pdf-viewer.html?file=../lvpdf/skarda-apvalki-cenradis-2025-2026.pdf">
+        <!-- PDF-painikkeet (kansion sisäiset polut) -->
+        <a id="broschyr-btn" class="btn"
+           href="./viewer.html?file=lvpdf/niemi_isolering_forside.pdf" target="_blank" rel="noopener">
+          Öppna broschyr (PDF)
+        </a>
+
+        <a class="btn btn-outline"
+           href="./viewer.html" target="_blank" rel="noopener">
+          Öppna PDF-visning
+        </a>
+
+        <!-- esimerkkilinkki hinnastoon (kun lisäät tiedoston lvpdf-kansioon) -->
+        <a id="skarda-btn" class="btn btn-outline"
+           href="./viewer.html?file=lvpdf/skarda-apvalki-cenradis-2025-2026.pdf" target="_blank" rel="noopener">
           Plåtbeklädnader (PDF)
         </a>
-
-        <a class="btn" href="pdf-viewer.html" target="_blank" rel="noopener">
-          Visa produkt-PDF
-        </a>
-
-        <a class="btn-outline" href="pdf-viewer.html?file=../lvpdf/1.lv.pdf" target="_blank" rel="noopener">
-          Öppna första PDF
-        </a>
       </div>
+      <p class="pdf-note">PDF-tiedostot sijaitsevat: <code>svenska/lvpdf/</code>. Voit lisätä niitä vapaasti.</p>
     </section>
   </header>
 
+  <!-- Kuvat -->
   <section class="container imgwrap">
-    <img loading="lazy" class="pretty" src="../assets/julkaisuun.png" alt="Rektangulära kanaler – standard och specialmått">
+    <img loading="lazy" class="pretty" src="../assets/julkaisuun.png"
+         alt="Rektangulära ventilationskanaler – standard och specialmått" />
     <p class="imgcap">Standardkanaler och specialmått enligt överenskommelse</p>
   </section>
 
   <section class="container imgwrap">
-    <img loading="lazy" class="pretty" src="../assets/julkaisu.png" alt="Isoleringsbeklädnad – exakt och estetisk tillverkning">
+    <img loading="lazy" class="pretty" src="../assets/julkaisu.png"
+         alt="Isoleringsbeklädnad – exakt och estetisk tillverkning" />
     <p class="imgcap">Isoleringsbeklädnad med erfarenhet och precision</p>
   </section>
 
+  <!-- Pikalinkit -->
   <section class="container section">
     <div class="cta-row">
-      <a class="btn" href="../produkter.html">Produkter</a>
-      <a class="btn btn-outline" href="../prislista.html">Prislista</a>
-      <a class="btn btn-outline" href="../kontakt.html">Kontakt</a>
+      <a class="btn" href="./produkter.html">Produkter</a>
+      <a class="btn btn-outline" href="./prislista.html">Prislista</a>
+      <a class="btn btn-outline" href="./kontakt.html">Kontakt</a>
     </div>
   </section>
 
   <main>
+    <!-- Kolme nostoa -->
     <section class="container grid-3" style="margin-top:.75rem;">
       <article class="card">
         <h3>Kvalitet</h3>
@@ -76,6 +92,7 @@
       </article>
     </section>
 
+    <!-- CTA -->
     <section class="container cta-banner">
       <p><strong>Behöver du en offert?</strong></p>
       <p>Skicka oss <strong>ritningar eller mått</strong> – vi beräknar snabbt <strong>materialkostnad</strong> och leverans.</p>
@@ -86,6 +103,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="divider"></div>
@@ -99,19 +117,23 @@
     </div>
   </footer>
 
+  <!-- Fallback: jos PDF ei löydy Pagesista, vaihda raw-osoitteeseen -->
   <script>
-  (async () => {
-    const a = document.getElementById('skarda-btn');
-    if (!a) return;
-    const pagesURL = a.getAttribute('href');
-    const rawURL = 'https://raw.githubusercontent.com/Markku2809/sv.-niemiisolering/main/lvpdf/skarda-apvalki-cenradis-2025-2026.pdf';
-    try {
-      const r = await fetch(pagesURL, { method: 'HEAD' });
-      if (!r.ok) a.setAttribute('href', rawURL);
-    } catch (e) {
-      a.setAttribute('href', rawURL);
-    }
-  })();
+    (async () => {
+      const btn = document.getElementById('skarda-btn');
+      if (!btn) return;
+      const pagesURL = btn.getAttribute('href'); // ./viewer.html?file=lvpdf/…
+      const rawURL = 'https://raw.githubusercontent.com/Markku2809/sv.niemi-isolering.com/main/svenska/lvpdf/skarda-apvalki-cenradis-2025-2026.pdf';
+      try {
+        // testataan vain PDF:n olemassaolo
+        const pdfUrl = new URL(pagesURL, location.href).searchParams.get('file');
+        if (!pdfUrl) return;
+        const head = await fetch(pdfUrl, { method: 'HEAD' });
+        if (!head.ok) btn.setAttribute('href', rawURL);
+      } catch (e) {
+        btn.setAttribute('href', rawURL);
+      }
+    })();
   </script>
 </body>
 </html>
